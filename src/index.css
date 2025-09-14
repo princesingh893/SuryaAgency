@@ -1,0 +1,269 @@
+/* Import a nice font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+}
+
+.app {
+  padding: 18px;
+}
+
+.search-input {
+  width: 98%;
+  padding: 8px 10px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+
+
+/* --- Main Card Styles --- */
+.agency-card {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  border-radius: 12px; /* Modern, rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Soft shadow for depth */
+  padding: 10px 20px;
+  /* margin: 2rem auto; Centers the card on the page */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eef2f7;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.agency-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+.agency-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Left Side: Info Section --- */
+.info-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  height: 100px;
+}
+
+.agency-name {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.agency-location {
+  font-size: 0.95rem;
+  color: #7f8c8d;
+  margin: 4px 0 0 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.contact-details {
+  display: flex;
+  gap: 24px; /* Space between phone and GSTIN */
+  color: #34495e;
+  font-size: 0.9rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Space between icon and text */
+}
+
+/* --- Right Side: Action Button --- */
+.admin-button {
+  background-color: #3498db;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  white-space: nowrap; /* Prevents button text from wrapping */
+}
+
+.admin-button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 4px 10px rgba(52, 152, 219, 0.4);
+}
+
+.shop h2 {
+  margin-top: 20px;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: #fff;
+}
+
+.invoice-table th,
+.invoice-table td {
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: left;
+}
+
+.invoice-table th {
+  background: #f0f0f0;
+}
+
+.checkout-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.product-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  background: #fff;
+  border-radius: 6px;
+}
+
+.product-card .pname {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.admin {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.admin input {
+  display: block;
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.admin-product,
+.order {
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 20px;
+  color: #666;
+}
+/* Base styles (already good) stay same */
+
+/* ✅ Responsive: Tablets and below */
+@media (max-width: 992px) {
+  .agency-card {
+   flex-wrap: wrap;
+  }
+
+  .agency-title {
+    align-items: center;
+    text-align: center;
+  }
+
+  .contact-details {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .admin {
+    grid-template-columns: 1fr; /* Stack products & orders */
+  }
+  .admin-button{
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+  .contact-item span{
+    font-size: 0.9rem;
+  }
+}
+
+/* ✅ Responsive: Mobiles */
+@media (max-width: 600px) {
+  .logo {
+    height: 70px;
+  }
+
+  .agency-name {
+    font-size: 1.4rem;
+  }
+
+  .admin-button {
+    width: 100%;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .search-input {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+
+  .invoice-table th,
+  .invoice-table td {
+    font-size: 0.85rem;
+    padding: 4px;
+  }
+
+  /* ✅ Make invoice table scrollable */
+  .invoice-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .product-list {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  }
+
+  .product-card {
+    padding: 8px;
+  }
+
+  .checkout-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .footer {
+    font-size: 10px;
+  }
+}
+
